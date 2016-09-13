@@ -1,0 +1,13 @@
+{
+  "name": "holamundo-nodejs",
+  "version": "1.0.0",
+  "description": "Demo OpenShift v3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Patricio Chavez",
+  "license": "ISC",
+  "dependencies": {
+    }
+}
