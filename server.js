@@ -1,8 +1,13 @@
-var http = require('http');
-var handleRequest = function(request, response) {
-  response.writeHead(200);
-  response.write('<img style="-webkit-user-select: none; cursor: zoom-out;" src="http://www.empresas.telefonica.com.ar/wp-content/themes/telefonica_empresas/img/bg/bg_productos.jpg" width="1366" height="784">');
-  response.end();
-}
-var www = http.createServer(handleRequest);
-www.listen(8080);
+var http = require('http'),
+fs = require('fs');
+
+fs.readFile('./index.html', function (err, html) {
+  if (err) {
+     throw err; 
+    }       
+http.createServer(function(request, response) {  
+    response.writeHeader(200, {"Content-Type": "text/html"});  
+    response.write(html);  
+    response.end();  
+    }).listen(8080);
+});
